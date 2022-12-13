@@ -34,8 +34,12 @@ done < file.txt
 # Use the 'date' command to get the current date and time
 now=$(date)
 
+# Prompt the user for the email address and message
+read -p "Enter the recipient's email address: " email
+read -p "Enter the message: " message
+
 # Use the 'mail' command to send an email
-mail -s "Hello from Furnitas" user@example.com <<< "Hi there! This is a message from Furnitas. The current date and time is: $now"
+mail -s "Hello from Furnitas" "$email" <<< "$message"
 
 # Use the 'ls' command to list the files in the current directory
 files=$(ls)
